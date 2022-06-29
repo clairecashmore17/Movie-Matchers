@@ -53,6 +53,7 @@ var sumOfScores = {
   scared: 0,
   indifferent:0
 }
+var finish = false;
 
 
 //function to create buttons
@@ -113,11 +114,42 @@ function refreshUlParent() {
   //append the new ul to our question section
   questionSectionEl.appendChild(parentEl);
 }
-
+//create a function to check if we have finished our quiz
+function checkEnd(targetEl){
+  if(questionIndex >= 4){
+    // if the user clicked happy on q5, add to happy score and end quiz
+    if(targetEl.matches("#happy")){
+      sumOfScores.happy++;
+      finish = true;
+      
+    }
+    // if the user clicked sad on q5, add to sad score and end quiz
+    else if(targetEl.matches("#sad")){
+      
+      sumOfScores.sad++;
+      finish = true;
+      
+    }
+    // if the user clicked scared on q5, add to scared score and end quiz
+    else if(targetEl.matches("#scared")){
+      
+      sumOfScores.scared++;
+      finish = true;
+      
+    }
+    // if the user clicked indifferent on q5, add to indifferent score and end quiz
+    else if(targetEl.matches("#indifferent")){
+      
+      sumOfScores.indifferent++;
+      finish = true;
+      
+    } 
+  }
+}
 // Function to handle all of our quiz buttons
 function quizButtonHandler(event) {
 var targetEl= event.target
-
+if(!finish) {
 // if our target matches the start button
 if (targetEl.matches("#start-quiz")) {
   //remove beginning elements
@@ -133,6 +165,7 @@ else if(targetEl.matches("#happy")){
   refreshUlParent();
   //create new buttons
   createButtons();
+  checkEnd(targetEl);
   
 }
 else if(targetEl.matches("#sad")){
@@ -143,6 +176,7 @@ else if(targetEl.matches("#sad")){
  refreshUlParent();
  //create new buttons
  createButtons();
+ checkEnd(targetEl);
   
 }
 else if(targetEl.matches("#scared")){
@@ -152,6 +186,7 @@ else if(targetEl.matches("#scared")){
   refreshUlParent();
   //create new buttons
   createButtons();
+  checkEnd(targetEl);
   
 }
 else if(targetEl.matches("#indifferent")){
@@ -161,10 +196,17 @@ else if(targetEl.matches("#indifferent")){
   refreshUlParent();
   //create new buttons
   createButtons();
+  checkEnd(targetEl);
   
 }
+
 else {
   alert("This is not a button");
+}
+}
+else {
+  alert("quiz over")
+  console.log(sumOfScores);
 }
 
 }
