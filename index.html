@@ -49,7 +49,7 @@
     </header>
 
     <!-- Main -->
-    <main class="columns">
+    <main class="columns" id="page-content">
     <!-- Quiz on the left -->
         <section class="column m-4">
             <div class="columns is-flex-direction-column">
@@ -60,9 +60,10 @@
                 <div class="column is-half">
                      <progress class="progress is-small" value="4" max="5"></progress>
                 </div>
-                <div class="column">
+                <div class="column" id="questions-section">
                     <h1 class="title is-4" id="prompt">Question/Prompt</h1>
-                    <ul>
+                    <button class="button" id="start-quiz">Start</button>
+                    <ul id="questions-list">
                         <!-- Question buttons through javascript -->
                     </ul>
                 </div>
