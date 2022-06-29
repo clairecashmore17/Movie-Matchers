@@ -52,7 +52,7 @@ var sumOfScores = {
   sad: 0,
   scared: 0,
   indifferent:0
-}
+};
 var finish = false;
 
 
