@@ -1,0 +1,32 @@
+.btnSpecial {
+    outline: none;
+    border: none;
+    display: inline-block;
+    background: rgb(126, 22, 22);
+    font-size: small;
+    border-radius: 12px;
+    position: relative;
+    top: -3px;
+    box-shadow: 0 3px black;
+}
+
+.btnSpecial:hover {
+    box-shadow: 0 2px var(--grey);
+    top: -2px;
+}
+.btnSpecial:active {
+    box-shadow: 0 0px var(--grey);
+    top: 0;
+}
+.text-movie {
+    color: gold;
+}
+.text-movie-red{
+    color: rgb(126, 22, 22);
+}
+.movie-red-back {
+    background: rgb(126, 22, 22);
+}
+body{
+    background-color: rgb(16, 2, 2);
+}

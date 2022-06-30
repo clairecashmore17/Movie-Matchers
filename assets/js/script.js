@@ -65,6 +65,7 @@ function createButtons(){
    for (i=0;i<4;i++) {
     //create our button
     var buttonEl= document.createElement("button")
+    buttonEl.classList = "btnSpecial text-movie";
     // switch case to determine what type of answer we are printing.
     switch(i) {
       case 0:
@@ -201,7 +202,7 @@ else if(targetEl.matches("#indifferent")){
 }
 
 else {
-  alert("This is not a button");
+  console.log("This is not a button");
 }
 }
 else {
