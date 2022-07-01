@@ -43,7 +43,9 @@ var questionArray= [
 
 // Global Variable Definitions
 var pageContent= document.querySelector("#page-content")
-var startButton= document.querySelector("#start-quiz")
+var questionSection = document.querySelector("#questions-section");
+var resultButton = document.querySelector("#result-btn");
+var startButton= document.querySelector("#start-quiz");
 // Index that helps us move to next question in array
 var questionIndex = 0;
 // Object to hold the scores from the quiz
@@ -200,18 +202,37 @@ else if(targetEl.matches("#indifferent")){
   checkEnd(targetEl);
   
 }
-
 else {
   console.log("This is not a button");
 }
 }
 else {
-  alert("quiz over")
+  // alert("quiz over")
+  // debugger
+  var ulEl = document.querySelector("#questions-list");
+  var resultBtnSectionEl = document.querySelector("#result-btn");
+  ulEl.remove();
+  var resultButtonEl = document.createElement("button");
+  resultButtonEl.id = "get-results";
+  resultButtonEl.textContent = "Get Results!";
+  resultButtonEl.classList = "btnSpecial text-movie"
+  resultBtnSectionEl.appendChild(resultButtonEl);
+  
+ 
+
   console.log(sumOfScores);
+  console.log(finish);
 }
 
+}
+function resultButtonHandler(event){
+  targetEl = event.target;
+  if(targetEl.matches("#get-results")){
+    findMovie();
+  }
 }
 
 
 //Event listeners
-pageContent.addEventListener("click",quizButtonHandler);
+questionSection.addEventListener("click",quizButtonHandler);
+resultButton.addEventListener("click" ,resultButtonHandler);

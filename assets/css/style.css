@@ -27,6 +27,12 @@
 .movie-red-back {
     background: rgb(126, 22, 22);
 }
+.has-gold-background {
+    background:gold;
+}
+.rounded { 
+    border-radius: 3px;
+}
 body{
     background-color: rgb(16, 2, 2);
 }
