@@ -233,6 +233,8 @@ function resultButtonHandler(event){
   if(targetEl.matches("#get-results")){
     findMovie();
     progressBarEl.value = 5; 
+    var resultBtnSectionEl = document.querySelector("#result-btn");
+    resultBtnSectionEl.remove();
   }
 }
 
