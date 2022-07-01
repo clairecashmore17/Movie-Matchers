@@ -46,6 +46,7 @@ var pageContent= document.querySelector("#page-content")
 var questionSection = document.querySelector("#questions-section");
 var resultButton = document.querySelector("#result-btn");
 var startButton= document.querySelector("#start-quiz");
+var progressBarEl = document.querySelector("#progress-bar");
 // Index that helps us move to next question in array
 var questionIndex = 0;
 // Object to hold the scores from the quiz
@@ -67,7 +68,7 @@ function createButtons(){
    for (i=0;i<4;i++) {
     //create our button
     var buttonEl= document.createElement("button")
-    buttonEl.classList = "btnSpecial text-movie";
+    buttonEl.classList = "btnSpecial text-movie-red";
     // switch case to determine what type of answer we are printing.
     switch(i) {
       case 0:
@@ -146,7 +147,8 @@ function checkEnd(targetEl){
       sumOfScores.indifferent++;
       finish = true;
       
-    } 
+    }
+    
   }
 }
 // Function to handle all of our quiz buttons
@@ -209,6 +211,7 @@ else {
 else {
   // alert("quiz over")
   // debugger
+  
   var ulEl = document.querySelector("#questions-list");
   var resultBtnSectionEl = document.querySelector("#result-btn");
   ulEl.remove();
@@ -223,12 +226,13 @@ else {
   console.log(sumOfScores);
   console.log(finish);
 }
-
+progressBarEl.value = questionIndex;
 }
 function resultButtonHandler(event){
   targetEl = event.target;
   if(targetEl.matches("#get-results")){
     findMovie();
+    progressBarEl.value = 5; 
   }
 }
 

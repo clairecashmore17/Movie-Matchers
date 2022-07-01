@@ -1,15 +1,18 @@
-console.log(sumOfScores);
+//Global Variables
 var highestNum = 0;
 var topMatch = "";
 var tieMatch;
 var matchedGenre;
 var matchedDrinkLink;
-// sumOfScores.happy = 0;
-// sumOfScores.sad = 0;
-// sumOfScores.scared = 2;
-// sumOfScores.indifferent = 0;
 var movieFinal;
 var currentMovie;
+var currentDrink;
+var combo = {
+    movie: null,
+    drink: null 
+}
+
+// movies that fit the genre
 var happyMovies = [
     "Deadpool",
     "21 Jump Street",
@@ -77,6 +80,9 @@ var randomMovies = [
     "Midsommar"
 
 ]
+var resultsSectionEl = document.querySelector("#results-text");
+
+
 
 // function to generate a random numeric value
 function randomNumber(min, max) {
@@ -84,39 +90,57 @@ function randomNumber(min, max) {
 
     return value;
 };
+
 //Function to find top match
 function findTopMatches(){
     // Find which category scored the most points
     if(highestNum < sumOfScores.happy){
+        //if happy is our highest number, set ne highNum to compare
         highestNum = sumOfScores.happy;
+        //Set the users match to happy
         topMatch = "happy";
+        // match the user with a genre
         matchedGenre = happyMovies;
+        // match the drink with a link for the user
         matchedDrinkLink = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka"; 
-        console.log("our new highNum is "  + highestNum + " and it was for category " + topMatch);
+        //console log to keep track of our high num and match
+         console.log("our new highNum is "  + highestNum + " and it was for category " + topMatch);
     }
     if(highestNum < sumOfScores.sad){
         highestNum = sumOfScores.sad;
+        //Set the users match to sad
         topMatch = "sad";
+        // match the user with a genre
         matchedGenre = sadMovies;
+        // match the drink with a link for the user
         matchedDrinkLink = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Wine";
+        //console log to keep track of our high num and match
         console.log("our new highNum is "  + highestNum + "and it was for category " + topMatch);
     }
     if(highestNum < sumOfScores.scared){
         highestNum = sumOfScores.scared;
+        //Set the users match to scared
         topMatch = "scared";
+        // match the user with a genre
         matchedGenre = pgMovies;
+        // match the drink with a link for the user
         matchedDrinkLink = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
+        // console log to keep track of high num and match
         console.log("our new highNum is "  + highestNum + "and it was for category " + topMatch);
     }
     if(highestNum < sumOfScores.indifferent){
+        highestNum = sumOfScores.indifferent;
+        //Set the users match to indifferent
+        topMatch = "indifferent";
+        // match the user with a genre
+        matchedGenre = randomMovies;
+        // match the drink with a link for the user
+        matchedDrinkLink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
-            highestNum = sumOfScores.indifferent;
-            topMatch = "indifferent";
-            matchedGenre = randomMovies;
-            matchedDrinkLink = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-            console.log("our new highNum is "  + highestNum + "and it was for category " + topMatch);
+        //console log to keep track of our high num and match
+        console.log("our new highNum is "  + highestNum + "and it was for category " + topMatch);
     }
-console.log(topMatch);
+// ************** HAVE NOT ADDED SECOND SECTION FOR TIE YET ********/
     //check for ties
     if(topMatch != "happy" && highestNum == sumOfScores.happy){
         tieMatch = "happy";
@@ -138,43 +162,57 @@ console.log(topMatch);
 
 }
 
+//Function to locate the random movie from our 
 function findMovie(){
 findTopMatches();
 
     //Evaluating our results
     switch (topMatch) {
         case "happy":
+            // create a random index to pull from array of movies
             var randomMovieIndex = randomNumber(0, happyMovies.length-1);
+            //split the title by spaces
             var movieTitleSplit = happyMovies[randomMovieIndex].split(" ");
+            // join the separated arrays from the split with a plus
             movieFinal = movieTitleSplit.join('+');
             break;
         case "sad":
+            // create a random index to pull from array of movies
             var randomMovieIndex = randomNumber(0, sadMovies.length-1);
+            //split the title by spaces
             var movieTitleSplit = sadMovies[randomMovieIndex].split(" ");
+            // join the separated arrays from the split with a plus
             movieFinal = movieTitleSplit.join('+');
             break;
         case "scared":
+            // create a random index to pull from array of movies
             var randomMovieIndex = randomNumber(0, pgMovies.length-1);
             console.log(randomMovieIndex);
+            //split the title by spaces
             var movieTitleSplit = pgMovies[randomMovieIndex].split(" ");
+            // join the separated arrays from the split with a plus
             movieFinal = movieTitleSplit.join('+');
             break;
         case "indifferent":
+            // create a random index to pull from array of movies
             console.log("In indifferent case statement")
             var randomMovieIndex = randomNumber(0, randomMovies.length-1);
-            console.log(randomMovieIndex);
+            
+            //split the title by spaces
             var movieTitleSplit = randomMovies[randomMovieIndex].split(" ");
+            // join the separated arrays from the split with a plus
             movieFinal = movieTitleSplit.join('+');
             break;
     }
     console.log("Took movie from: " + randomMovieIndex)
+    //Now with our title and our drink URL, get our film and drink
     getFilms();
     getDrink(matchedDrinkLink, topMatch);
 }
 console.log(movieFinal);
 
 
-
+//Function to get the desired film based off its title
 function getFilms(){
 var apiKey = "95278f49";
  var ombdUrl = "http://www.omdbapi.com/?apikey="+ apiKey +"&t=" + movieFinal;
@@ -183,23 +221,31 @@ var apiKey = "95278f49";
             if(response.ok){
                 response.json()
                     .then(function(data){
+                        //set the current movie equal to the data
                         currentMovie = data;
+                        combo.movie = data;
                     })
             }
         })
 
 }
 
+// Function to display all our data onto the page
 function printToScreen(drink){
     console.log(drink);
-    var watchSectionEl = document.querySelector("#what-to-watch");
+    currentDrink = drink;
+    combo.drink = drink;
+    // Find the section to store all the pieces
     var resultsTextEl = document.querySelector("#results-text");
+    //create an h2 element for the quiz result
     var resultTitle = document.createElement("h2");
     resultTitle.classList = "title text-movie";
     resultTitle.textContent = "You got the " + topMatch + " category!";
     
+    //Create and excerpt explaining their result
     var resultExcerptEl = document.createElement("p");
     resultExcerptEl.classList = "text-movie movie-red-back rounded m-3 p-1 has-text-centered";
+    //Excerpts for all the different results
     if(topMatch === "happy"){
         resultExcerptEl.textContent = "You enjoy being on your toes and ready for the day! Uplifting and exciting content really speaks to you. See what movie and drink combo you should enjoy below!";
     }
@@ -213,9 +259,18 @@ function printToScreen(drink){
         resultExcerptEl.textContent = "You don't seem to really care about this quiz, let alone what type of movies you want. You always just go with the flow and hope to get something out of it. Whatever results you want, as long as it's given to you. If you want to see your results, just look below I guess.."
     }
    
+    //Append this section to the result section.
     resultsTextEl.appendChild(resultTitle);
     resultsTextEl.appendChild(resultExcerptEl);
 
+    // Save this combo!
+    var saveComboBtn = document.createElement("button");
+    saveComboBtn.textContent = "Add To Favorites!";
+    saveComboBtn.id ="add-to-fav";
+    saveComboBtn.classList = "btnSpecial text-movie-red has-gold-background";
+    resultsTextEl.appendChild(saveComboBtn);
+
+    // Create the sections and divs needed to project the movie and drink combo and append them to the UL and section
     var ulResultSectionEl = document.querySelector("#results");
     var listMovieItemEl = document.createElement("li");
     var movieBlockSection = document.createElement("div");
@@ -233,15 +288,15 @@ function printToScreen(drink){
 }
 // function to generate movie elements
 function generateMovieEls(movieBlockSection){
+
     // Create the contents of our movie li element
-    
     movieBlockSection.classList = "columns";
-
+    // movie poster
     var moviePoster = document.createElement("img");
-
+    //div to hold our movie title and plot
     var movieInfoDiv = document.createElement("div");
     movieInfoDiv.classList = "column is-outlined";
-
+    //title and plot elements
     var movieTitle = document.createElement("h2");
     var moviePlot = document.createElement("p");
     moviePoster.className = "column is-half";
@@ -250,42 +305,49 @@ function generateMovieEls(movieBlockSection){
     movieTitle.classList = "text-movie title";
     moviePlot.textContent = currentMovie.Plot;
     moviePlot.classList = "text-movie is-size-6";
-
+    //append to the movie div
     movieInfoDiv.appendChild(movieTitle);
     movieInfoDiv.appendChild(moviePlot);
 
-
+    //append the poster and the movie info
     movieBlockSection.appendChild(moviePoster);
     movieBlockSection.appendChild(movieInfoDiv);
 }
 
 // Function to generate the paired drink
 function generateDrinkEls(drinkBlockSection,drink){
-    console.log(drink.drinks[0]);
+    // console.log(drink.drinks[0]);
+    //make the section just like the movie display
     drinkBlockSection.classList = "columns"
-    
+    //drink image
     var drinkImg = document.createElement("img");
     drinkImg.classList = "column is-half"
     drinkImg.src = drink.drinks[0].strDrinkThumb;
 
+    //create the drink title and ingredient/instruction element
     var drinkInfoDiv = document.createElement("div");
     drinkInfoDiv.classList = "column";
     
+    // name and ingredient/instructions
     var drinkName = document.createElement("h2");
     var drinkInstructions = document.createElement("p");
-    drinkName.classList = "title";
+    drinkName.classList = "title has-text-primary-light";
     drinkName.textContent = drink.drinks[0].strDrink;
 
-    drinkInstructions.classList = "is-size-6";
+    drinkInstructions.classList = "is-size-6 has-text-primary-light";
     drinkInstructions.textContent ="Ingredients: " + drink.drinks[0].strIngredient1 + "," + drink.drinks[0].strIngredient2 + "," + drink.drinks[0].strIngredient3 + ".    " +  drink.drinks[0].strInstructions;
 
+    //append to the info div
     drinkInfoDiv.appendChild(drinkName);
     drinkInfoDiv.appendChild(drinkInstructions);
 
+    //append to the drink section
     drinkBlockSection.appendChild(drinkImg);
     drinkBlockSection.appendChild(drinkInfoDiv);
 
 }
+
+//With recently fetched id, find the drink information
 function fetchDrinkById(drinkId){
     console.log("in fetch drink function");
     var cocktailUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;
@@ -301,6 +363,8 @@ function fetchDrinkById(drinkId){
         }
     })
 }
+
+//with the URL, pick a random drink and get it's ID
 function getDrinkData(drink){
     console.log("in getDrinkData function")
     if(topMatch != "indifferent"){
@@ -319,6 +383,7 @@ function getDrinkData(drink){
     }
 
 }
+//function to fetch the requested drink/drinks based off the provided user drink match url
 function getDrink(cocktailUrl){
     
 
@@ -334,13 +399,39 @@ function getDrink(cocktailUrl){
         })
 
 }
+//Add our new score object to the local storage
+function addToStorage(){
+    var newAddition = JSON.parse(localStorage.getItem("combo"));
 
+    newAddition.push(combo);
+    localStorage.setItem("combo", JSON.stringify(newAddition));
+}
+//Function to save score to localStorage
+function saveCombo() {
+    var currentCombo = JSON.parse(localStorage.getItem("combo"));
+    // if the score is null, add to the storage
+    if (currentCombo === null) {  
+        localStorage.setItem("combo", JSON.stringify([combo]));
+    }
+    //if we already have scores, store this new score with them
+    else {
+       addToStorage();
+    }
 
-var pageContentEl = document.querySelector("#page-content");
+};
+// Function to deal with the save button
+function saveButtonHandler(event){
+    targetEl = event.target;
+    if(targetEl.matches("#add-to-fav")){
+        console.log("clicked save button!");
+        var saveButton = document.querySelector("#add-to-fav");
+        saveButton.textContent = "Saved!";
+        // saveButton.setAttribute(disabled);
+        saveButton.classList = "has-background-success has-text-black rounded";
+        saveCombo();
+    }
+}
 
+//Event listener
+resultsSectionEl.addEventListener("click", saveButtonHandler);
 
-
-// pageContentEl.addEventListener("click", resultButtonHandler);
-
-// getFilms();
-// getDrink();
