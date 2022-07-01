@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Your Favorites</title>
+  </head>
+  <header class="hero">
+    <div class="hero-body is-uppercase container">
+        <p class="title has-text-centered has-text-weight-bold text-movie-red">
+            Movie Matchers
+        </p>
+        <p class="subtitle has-text-centered has-text-weight-bold text-movie-red">
+            Movies you were made to watch.
+        </p>
+        
+    </div>
+    <!-- Navigation tabs -->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light is-spaced bg-primary"> 
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
+            <div class="block movie-red-back has-text-centered">
+                <a class="nav-item nav-link active m-4 text-movie" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            
+                <a class="nav-item nav-link m-4 text-movie" href="./yourFavorite.html">Your Favorites</a>
+            
+                <a class="nav-item nav-link m-4 text-movie" href="./contactUs.html">Contact Us</a>
+
+                <a class="nav-item nav-link m-4 text-movie" href="./ourInspiration.html">Recommended</a>
+                <!-- Insert easter egg movie poster to link-->
+            </div>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+
+</header>
+  <body>
+    <h2>Contact us</h2>
+  
+ 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/apiPull.js"></script>
+  </body>
+</html>
