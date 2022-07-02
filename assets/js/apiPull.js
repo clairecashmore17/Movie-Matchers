@@ -31,7 +31,6 @@ var happyMovies = [
     "Kingsman The Secrete Service"
 ]
 var sadMovies = [
-    
     "Five Feet Apart",
     "Lion",
     "Titanic",
