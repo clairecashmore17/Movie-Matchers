@@ -1,14 +1,19 @@
 // if the score is empty, tell user there are not scores to place
 var currentCombo = JSON.parse(localStorage.getItem("combo"));
-
+var noFavSectionEl = document.querySelector("#no-fav");
 if (currentCombo === null) {
     console.log("There are no combos yet");
-    alert("Play the quiz to get a combo!");
-    
+    var noFavLineEl = document.createElement("p");
+   
+    noFavLineEl.textContent = "No favorites saved yet, go and take the quiz!";
+    noFavLineEl.classList = "text-movie movie-red-back rounded m-3 p-1 has-text-centered";
+    noFavSectionEl.appendChild(noFavLineEl);
+
 }
 //otherwise if you have scores,print them out
 else {
     for (i = 0; i < currentCombo.length; i++) {
+        noFavSectionEl.remove();
         var movie = currentCombo[i].movie;
         var drink = currentCombo[i].drink.drinks[0];
         var ulComboSectionEl = document.querySelector("#combos");
