@@ -1,6 +1,17 @@
-# Personality Movie Suggestions
+# Movie Matchers
 <h2>Welcome to the Personality Movie Suggestor!</h2>
-We want to create an app that will take in your personality from a quiz and present you with a movie and a drink to go with it.
+<p>We created a page that allows you to be paired with a movie and a beverage based off of a personality quiz! So sit back, relax, and just be yourself! We will do the rest!</p>
 
+<h3>Technologies Used</h3>
+<ul>
+  <li>Bulma CSS Framework</li>
+  <li>Github</li>
+  <li>Visual Studio Code</li>
+</ul>
+<h3> What our page looks like: </h3>
+<!-- Put img here! -->
+
+<h3> Deployment Link: </h3>
+<p> https://clairecashmore17.github.io/project-1/</p>
 
 Created by: Claire Cashmore, Abate Bayih, Graham Smith
