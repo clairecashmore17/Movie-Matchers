@@ -218,7 +218,7 @@ else {
   var resultButtonEl = document.createElement("button");
   resultButtonEl.id = "get-results";
   resultButtonEl.textContent = "Get Results!";
-  resultButtonEl.classList = "btnSpecial text-movie"
+  resultButtonEl.classList = "btnSpecial text-movie-red"
   resultBtnSectionEl.appendChild(resultButtonEl);
   
  
