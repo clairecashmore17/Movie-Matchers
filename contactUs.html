@@ -52,35 +52,111 @@
 
 </header>
   <body>
+
     <h2></h2>
 
-    <div class="container my-5 mt-5 mx-5 px-5">
-      <h2 class="title text-centere text-white is-2 is-capitalized">Contact Movie Matchers</h2>
-      <form action="" method="post">
-          <div class="field">
-              <label for="name" class="label is-size-4 has-text-weight-light"></label>
-              <div class="control has-icons-left">
-                  <input type="text" name="name" id="name" class="input" placeholder="Movie Character Name" autofocus>
-                      <span class="icon is-left">
-                          <i class="fa fa-user"></i>
-                      </span>
+    <div class="container">
+      <div class="columns is-justify-content-center">
+        <div class="column is-5-tablet is-5-desktop is-5-widescreen is-5-fullh">
+          <form method="post"
+          action="https://public.herotofu.com/v1/5aa8ac20-fc8b-11ec-afe3-392e2c671a11" class="box p-5">
+          
+            <label class="is-block mb-4">
+              <span class="is-block mb-2">Your Movie Character name</span>
+              <input
+                name="name"
+                type="text"
+                class="input"
+                placeholder="Tom Cruise"
+              />
+            </label>
+
+            <label class="is-block mb-4">
+              <span class="is block mb-2">Email Address</span>
+              <input
+                name="email"
+                type="email"
+                class="input"
+                placeholder="tom.cruise@GabePerryBootcamp.edu"
+              />
+            </label>
+
+            <label class="is-block mb-4">
+              <span class="is-block mb-2">Message</span>
+              <textarea
+                name="message"
+                class="textarea"
+                rows="4"
+                placeholder="Type your question to Movie Matchers here..."
+              ></textarea>
+            </label>
+
+            <div class="mb-4">
+              <button type="submit" class="button is-link px-4">Contact Us</button>
+            </div>
+        
+        </form>
+        </div>
+      </div>
+    </div>  
+
+
+      <!--Our Team container-->
+      <div class="columns is-multiline">
+
+        <!--Clair info-->
+        <div class="column is-5">
+          <div class="box p-5">
+            <div class="columns">
+              <div class="column is-4 mb-4 mb-0-desktop">
+                <img class="image is-fullwidth is-cover is-rounded" style="height: 200px;" src="../project-1/assets/css/images/claire.jpg" alt="">
               </div>
-          </div>
-          <div class="field">
-              <label for="email" class="label is-size-4 has-text-weight-light"></label>
-              <div class="control has-icons-left">
-                  <input type="email" name="email" id="email" class="input" placeholder="Email">
-                      <span class="icon is-left">
-                          <i class="fa fa-envelope"></i>
-                      </span>
+              <div class="column is-8">
+                <h3 class="is-size-4 has-text-weight-semibold">Claire Cashmore</h3>
+                <p class="mb-6 has-text-grey-dark">Project Lead, JS/HTML/CSS Master</p>
+                <p class="has-text-grey-dark">GitHub: clairecashmore17</p>
               </div>
+            </div>
           </div>
-          <div class="field">
-              <label for="message" class="label is-size-4 has-text-weight-light"></label>
-              <textarea name="message" id="message" rows="5" class="textarea is-medium" placeholder="Message to Movie Matchers"></textarea>
+        </div>
+        
+        <!--Abate info-->
+        <div class="column is-5">
+          <div class="box p-5">
+            <div class="columns is-multiline">
+              <div class="column is-4 mb-4 mb-0-desktop">
+                <img class="image is-fullwidth is-cover is-rounded" style="height: 200px;" src="../project-1/assets/css/images/abate.jpg" alt="">
+              </div>
+              <div class="column is-8">
+                <h3 class="is-size-4 has-text-weight-semibold">Abate Bayih</h3>
+                <p class="mb-6 has-text-grey-dark">JS Master</p>
+                <p class="has-text-grey-dark">GitHub: Abateb</p>
+              </div>
+            </div>
           </div>
-          <button type="submit" class="button is-success is-size-6">Submit</button>
-      </form>
+        </div>
+        
+        <!--Graham info-->
+        <div class="column is-5">
+          <div class="box p-5">
+            <div class="columns is-multiline">
+              <div class="column is-4 mb-4 mb-0-desktop">
+                <img class="image is-fullwidth is-cover is-rounded" style="height: 200px;" src="../project-1/assets/css/images/gls.png" alt="">
+              </div>
+              <div class="column is-8">
+                <h3 class="is-size-4 has-text-weight-semibold">Graham Smith</h3>
+                <p class="mb-4 has-text-grey-dark">HTML/CSS Master</p>
+                <p class="has-text-grey-dark">GitHub: gsmith560</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          </div>
+        </section>
+      </div>
+
   </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
