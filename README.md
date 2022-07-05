@@ -7,9 +7,13 @@
   <li>Bulma CSS Framework</li>
   <li>Github</li>
   <li>Visual Studio Code</li>
+  <li>Free API | TheCocktailDB.com</li>
+  <li>OMDb API - The Open Movie Database</li>
+
 </ul>
 <h3> What our page looks like: </h3>
 <!-- Put img here! -->
+<img src = "./assets/imgs/ScreenCap.png" />
 
 <h3> Deployment Link: </h3>
 <p> https://clairecashmore17.github.io/project-1/</p>
