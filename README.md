@@ -9,6 +9,9 @@
   <li>Visual Studio Code</li>
   <li>Free API | TheCocktailDB.com</li>
   <li>OMDb API - The Open Movie Database</li>
+  <li>HeroTofu Backend API - herotofu.com</li>
+  <li>MD Bootstrap - mdbootstrap.com</li>
+  <li>W3 Schools - w3schools.com</li>
 
 </ul>
 <h3> What our page looks like: </h3>
