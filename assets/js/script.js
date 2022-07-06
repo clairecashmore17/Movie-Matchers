@@ -230,7 +230,11 @@ progressBarEl.value = questionIndex;
 }
 function resultButtonHandler(event){
   targetEl = event.target;
+  var resultsButtonEl = document.querySelector("#get-results");
+  var promptTitle = document.querySelector("#prompt");
   if(targetEl.matches("#get-results")){
+    resultsButtonEl.remove();
+    promptTitle.textContent = "View your results!";
     findMovie();
     progressBarEl.value = 5; 
   }
@@ -240,3 +244,23 @@ function resultButtonHandler(event){
 //Event listeners
 questionSection.addEventListener("click",quizButtonHandler);
 resultButton.addEventListener("click" ,resultButtonHandler);
+
+
+
+//Html
+// Create quiz
+  //1. start button
+    /*event listener*/
+      /*dynamically add these
+      // 1a. question
+      /*index through multiple questions*/
+      //1b. answers
+      /*for loop to display multiple answers
+        // 1ai/1bi. next question and answers
+        /*dynicamlly alter the button text OR completely replace the buttons and create new ones
+      // get results
+    // sum up my score
+    /*display*/
+  // use my score    
+        /*putting in object*/
+      /*sending to a function*/
