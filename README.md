@@ -28,7 +28,7 @@
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/clairecashmore17/Movie-Matchers
+   git clone https://github.com/clairecashmore17/Movie-Matchers.git
    ```
 2. Open the project either locally or view on gh pages.
 
