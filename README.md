@@ -1,24 +1,51 @@
-# Movie Matchers
-<h2>Welcome to the Personality Movie Suggestor!</h2>
-<p>We created a page that allows you to be paired with a movie and a beverage based off of a personality quiz! So sit back, relax, and just be yourself! We will do the rest!</p>
+<p align="center">
+    <h1 align="center">Movie Matchers</h1>
+    <p align="center">Front-end website that pairs you with a movie and a beverage based off of a personality quiz! So sit back, relax, and just be yourself! We will do the rest!</p>
+</p>
 
-<h3>Technologies Used</h3>
-<ul>
-  <li>Bulma CSS Framework</li>
-  <li>Github</li>
-  <li>Visual Studio Code</li>
-  <li>Free API | TheCocktailDB.com</li>
-  <li>OMDb API - The Open Movie Database</li>
-  <li>HeroTofu Backend API - herotofu.com</li>
-  <li>MD Bootstrap - mdbootstrap.com</li>
-  <li>W3 Schools - w3schools.com</li>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-</ul>
-<h3> What our page looks like: </h3>
-<!-- Put img here! -->
-<img src = "./assets/imgs/ScreenCap.png" />
+## Table of Contents
 
-<h3> Deployment Link: </h3>
-<p> https://clairecashmore17.github.io/project-1/</p>
+<ol>
+    <li><a href="#about-the-project">About</a></li>
+    <li><a href="#languages-and-libraries-used">Languages & Libraries</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#authors">Authors</a></li>
+</ol>
 
-Created by: Claire Cashmore, Abate Bayih, Graham Smith
+## About the Project
+
+![Home_screenshot](./assets/imgs/ScreenCap.png)<br />
+[Deployment](https://clairecashmore17.github.io/project-1/)
+
+## Languages and Libraries Used
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+## Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/clairecashmore17/Movie-Matchers
+   ```
+2. Open the project either locally or view on gh pages.
+
+## License
+
+Copyright 2022 Movie-Matchers
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Authors
+
+Please feel free to reach out to us with any questions, recommendations, or other inquiries.
+
+Claire Cashmore - [GitHub](https://github.com/claire_cashmore17/) - clairecashmore2017@gmail.com
+Abate Bayih - [Github](https://github.com/Abateb)
+Graham Smith - [Github](https://github.com/gsmith560/)
