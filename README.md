@@ -18,7 +18,7 @@
 ## About the Project
 
 ![Home_screenshot](./assets/imgs/ScreenCap.png)<br />
-[Deployment](https://clairecashmore17.github.io/project-1/)
+[Deployment](https://clairecashmore17.github.io/Movie-Matchers/)
 
 ## Languages and Libraries Used
 
